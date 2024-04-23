@@ -49,5 +49,12 @@ Use clustering to create semantically-similar chunks, thus creating a new docume
 4. No Chunking at all
 
 ### Vector Database
-Pinecone: ideal for less than 1 million entries
+Pinecone: ideal for less than 1 million entries  
 Open Source Alternatives: Pgvector, Weaviate, 
+
+### Re-ranking the Retrieved Results
+Use a cross-encoder (a transformer model) - takes in a pair of sentences, and returns a score on relevance.
+Option: Sentence Transformers, traditional retrieval model like BM25.
+
+### API
+We can use FastAPI.
