@@ -35,11 +35,19 @@ The choice of the text embedder is critical, as it determines the quality of the
 Options: OpenAI, Sentence Transformers
 
 ### Document Chunking
+Often it's not practical to embed entire documents as a single vector. Divide a large document into smaller, more manageable chunks for embedding.  
 
 1. Max Token Window Chunking  
-Often not practical to embed entire documents as a single vector. Divide a large document into smaller, more manageable chunks for embedding.  
 Set overlapping windows with a specified amount of tokens to overlap so that tokens are shared between chunks, in case of splitting up meaningful context.
 
 2. Finding Custom Delimiters  
 Search for custom natural delimiters like page breaks in a PDF or newlines between paragraphs.
 
+3. Clustering
+Use clustering to create semantically-similar chunks, thus creating a new document.
+
+4. No Chunking at all
+
+### Vector Database
+Pinecone: ideal for less than 1 million entries
+Open Source Alternatives: Pgvector, Weaviate, 
